@@ -28,7 +28,7 @@ export class AppController implements OnModuleInit {
     });
   }
 
-  @Post('data')
+  @Post('smartpressure')
   async receiveData(@Body() payload: any) {
     if (client.connected) {
       client.publish('testing', JSON.stringify(payload), { qos: 0, retain: true });
